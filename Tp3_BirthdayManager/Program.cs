@@ -9,11 +9,11 @@ namespace Tp3_BirthdayManager
 {
     class Program
     {
-        
+        static Repository r = new Repository();
 
         static void Main(string[] args)
         {
-            
+           
             int opt;
 
 
@@ -55,7 +55,6 @@ namespace Tp3_BirthdayManager
             Console.WriteLine("Escreva o nome que deseja procurar: ");
             string name = Console.ReadLine();
 
-            Repository r = new Repository();
             r.Search(name);
         }
 
@@ -75,7 +74,7 @@ namespace Tp3_BirthdayManager
             DateTime.TryParseExact(inputDate, "dd/MM/yyyy", null, DateTimeStyles.None, out birthDate);
             p.Birthday = birthDate;
 
-            Repository r = new Repository();
+           
             r.Insert(p);
         }
     }

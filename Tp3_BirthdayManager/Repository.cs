@@ -20,7 +20,7 @@ namespace Tp3_BirthdayManager
         public void Search(string n)
         {
             bool b = false;
-            while (persons.Count != null)
+            if (persons.Count >= 0)
             {
                  b = true;
             }
@@ -29,13 +29,15 @@ namespace Tp3_BirthdayManager
             {
                 foreach (var x in persons)
                 {
-                    if (x.Name == n)
+                    if (x.Name.Contains(n))
                     {
-                        Console.WriteLine(x.Name + x.LastName + x.Birthday);
+                        Console.WriteLine("Pessoa achada" + x.Name + x.LastName + x.Birthday);
+                        b = false;
                     }
                     else
                     {
                         Console.WriteLine("Esse nome não consta no sistema");
+                        b = false;
                     }
                     
                 }
